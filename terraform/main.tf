@@ -93,7 +93,11 @@ module "aurora" {
   master_username     = local.rds.master_username
   master_password     = local.rds.master_password
   db_name             = local.rds.db_name
+  engine              = local.rds.engine
+  engine_version      = local.rds.engine_version
   secret_manager_arn  = module.secretsmanager.arn
+  acu_min             = local.rds.acu.min
+  acu_max             = local.rds.acu.max
 }
 
 #====================================
